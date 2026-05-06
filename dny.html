@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Electronics Store</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f5f5f5;
+}
+
+header {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+}
+
+.product img {
+    width: 100%;
+    height: 180px;
+}
+
+.product h3 {
+    margin: 10px 0;
+}
+
+.features {
+    font-size: 14px;
+    color: #555;
+}
+
+button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.cart {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🛒 Electronics Shopping Store</h1>
+</header>
+
+<div class="container">
+
+<!-- MOBILE PHONES -->
+<div class="product">
+    <img src="https://via.placeholder.com/200">
+    <h3>iPhone 14</h3>
+    <p>₹70,000</p>
+    <div class="features">
+        128GB Storage<br>
+        12MP Camera<br>
+        A15 Chip
+    </div>
+    <button onclick="addToCart('iPhone 14',70000)">Add to Cart</button>
+</div>
+
+<div class="product">
+    <img src="https://via.placeholder.com/200">
+    <h3>Samsung Galaxy S23</h3>
+    <p>₹65,000</p>
+    <div class="features">
+        256GB Storage<br>
+        50MP Camera<br>
+        Snapdragon 8 Gen 2
+    </div>
+    <button onclick="addToCart('Samsung S23',65000)">Add to Cart</button>
+</div>
+
+<div class="product">
+    <img src="https://via.placeholder.com/200">
+    <h3>OnePlus 11</h3>
+    <p>₹55,000</p>
+    <div class="features">
+        16GB RAM<br>
+        100W Charging<br>
+        AMOLED Display
+    </div>
+    <button onclick="addToCart('OnePlus 11',55000)">Add to Cart</button>
+</div>
+
+<!-- OTHER ELECTRONICS -->
+<div class="product">
+    <img src="https://via.placeholder.com/200">
+    <h3>Laptop</h3>
+    <p>₹80,000</p>
+    <div class="features">
+        Intel i7<br>
+        16GB RAM<br>
+        512GB SSD
+    </div>
+    <button onclick="addToCart('Laptop',80000)">Add to Cart</button>
+</div>
+
+<div class="product">
+    <img src="https://via.placeholder.com/200">
+    <h3>Smart Watch</h3>
+    <p>₹10,000</p>
+    <div class="features">
+        Heart Rate Monitor<br>
+        Bluetooth<br>
+        Waterproof
+    </div>
+    <button onclick="addToCart('Smart Watch',10000)">Add to Cart</button>
+</div>
+
+<div class="product">
+    <img src="https://via.placeholder.com/200">
+    <h3>Headphones</h3>
+    <p>₹3,000</p>
+    <div class="features">
+        Noise Cancellation<br>
+        Wireless<br>
+        20hr Battery
+    </div>
+    <button onclick="addToCart('Headphones',3000)">Add to Cart</button>
+</div>
+
+</div>
+
+<!-- CART -->
+<div class="cart">
+    <h2>🛒 Cart</h2>
+    <ul id="cartItems"></ul>
+    <h3>Total: ₹<span id="total">0</span></h3>
+    <button onclick="checkout()">Checkout</button>
+</div>
+
+<script>
+let total = 0;
+
+function addToCart(name, price) {
+    let cart = document.getElementById("cart
